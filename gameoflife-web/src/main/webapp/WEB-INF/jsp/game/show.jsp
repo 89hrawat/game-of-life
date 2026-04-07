@@ -126,4 +126,6 @@
 %>
 <div class="footer">Game Of Life version <%=appVersion%>
 </div>
+<%-- This is a JSP comment --%>
+
 </body>
