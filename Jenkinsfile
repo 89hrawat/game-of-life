@@ -1,4 +1,4 @@
-piplinle {
+pipelinle {
  
 agent { label 'JDK8'}
 tools {
