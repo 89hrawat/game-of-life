@@ -27,28 +27,10 @@ stage('Unit Test') {
         always {
             junit(
                 testResults: '**/target/surefire-reports/*.xml',
-                stdioRetention: 'FAILURES'
+                stdioRetention: ''
             )
         }
     }
 }
-stage('package the build') {
-    steps {
-               sh 'mvn clean package'
-                   }
-          }
-
-
-stage('Archive Artifacts') {
-    steps {
-         archiveArtifacts(
-       artifacts: '**/target/*.war',
-       fingerprint: true,
-       followSymlinks: false,
-       allowEmptyArchive: false
-       )
-                   }
-          }
-
 }
 }
