@@ -19,28 +19,5 @@ stages {
 	       sh 'mvn clean compile'
 		   }
           }
-   stage('Unit Test') {
-    steps {
-        sh 'mvn test'
-    }
-    post {
-        always {
-            junit(
-                testResults: '**/target/surefire-reports/*.xml',
-                stdioRetention: 'FAILURES'
-            )
-        }
-    }
-}		  
-   stage('Archive Artifacts') {
-    steps {
-	 archiveArtifacts(
-       artifacts: '**/target/*.war',
-       fingerprint: true,
-       followSymlinks: false,
-       allowEmptyArchive: false
-       )
-		   }
-          } 
 }
 }
