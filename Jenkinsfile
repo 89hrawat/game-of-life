@@ -16,7 +16,7 @@ stages {
       }
   stage('Build and code') {
     steps {
-	       sh 'mvn  package'
+	       sh 'mvn clean compile'
 		   }
           }
    stage('Unit Test') {
