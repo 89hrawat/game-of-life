@@ -24,9 +24,9 @@ stages {
          sh 'mvn -version'
                  }
       }
-  stage('install') {
+  stage('compile') {
     steps {
-	       sh 'mvn clean install'
+	       sh 'mvn clean compile'
 		   }
           }
 
@@ -38,7 +38,7 @@ stage('Unit Test') {
         always {
             junit(
                 testResults: '**/target/surefire-reports/*.xml',
-                stdioRetention: 'FAILURES'
+                stdioRetention: 'FAILED'
             )
         }
     }
