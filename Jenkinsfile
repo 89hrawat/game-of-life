@@ -1,6 +1,11 @@
 pipeline {
  
 agent { label 'JDK8' }
+tools {
+        jdk 'JDK8'
+        maven 'MAVEN3'
+    }
+
 
 stages {
   stage('checkout code') {
