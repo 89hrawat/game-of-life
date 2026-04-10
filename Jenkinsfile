@@ -14,7 +14,12 @@ stages {
          sh 'java -version'
 		 }   
       }
-  stage('compile') {
+    stage('verify mvn version') {
+   steps {
+         sh 'mvn -version'
+                 }
+      }
+  stage('install') {
     steps {
 	       sh 'mvn clean install'
 		   }
