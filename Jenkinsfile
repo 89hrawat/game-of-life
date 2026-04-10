@@ -43,6 +43,13 @@ stage('Unit Test') {
         }
     }
 }
+     }
+  stage('package') {
+    steps {
+               sh 'mvn package'
+                   }
+          }
+
    stage('Archive Artifacts') {
     steps {
          archiveArtifacts(
