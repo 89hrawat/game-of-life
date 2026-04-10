@@ -16,21 +16,8 @@ stages {
       }
   stage('compile') {
     steps {
-	       sh 'mvn clean compile'
+	       sh 'mvn clean install'
 		   }
           }
-stage('Unit Test') {
-    steps {
-        sh 'mvn test'
-    }
-    post {
-        always {
-            junit(
-                testResults: '**/target/surefire-reports/*.xml',
-                stdioRetention: ''
-            )
-        }
-    }
-}
 }
 }
